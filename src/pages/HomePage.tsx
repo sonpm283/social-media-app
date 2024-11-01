@@ -1,8 +1,11 @@
+import { Link } from "react-router-dom";
 
 function HomePage() {
   return (
     <div>
-      <p>Home Page</p>
+      <h2 className="text-lg font-semibold">Home Page</h2>
+
+      <Link className="text-main" to="/register">Register</Link>
     </div>
   );
 }

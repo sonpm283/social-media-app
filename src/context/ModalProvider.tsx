@@ -1,4 +1,4 @@
-import { ChildrenProps } from "@/types";
+import { ChildrenProp } from "@/types";
 import React, {
   createContext,
   useContext,
@@ -17,7 +17,7 @@ interface ModalContextType {
 
 const ModalContext = createContext<ModalContextType | undefined>(undefined);
 
-const ModalProvider = ({ children }: ChildrenProps) => {
+const ModalProvider = ({ children }: ChildrenProp) => {
   const [isShowing, setIsShowing] = useState<boolean>(false);
   const [content, setContent] = useState<ReactNode | null>(null);
 
