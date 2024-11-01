@@ -39,7 +39,7 @@ export default function FormField<T extends FieldValues>({
 }: FormFieldProps<T>) {
   return (
     <div>
-      <p className="text-textColor mb-1 text-sm">{label}</p>
+      <p className="text-dark-100 mb-1 text-sm">{label}</p>
       <Controller
         name={name}
         control={control}

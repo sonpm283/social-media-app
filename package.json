@@ -16,6 +16,7 @@
     "@mui/material": "^6.1.6",
     "@vitejs/plugin-react": "^4.3.3",
     "lodash": "^4.17.21",
+    "mui-one-time-password-input": "^2.0.3",
     "react": "^19.0.0-rc-603e6108-20241029",
     "react-dom": "^19.0.0-rc-603e6108-20241029",
     "react-hook-form": "^7.53.1",

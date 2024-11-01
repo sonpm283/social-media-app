@@ -5,19 +5,17 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 
 interface IFormData {
-  fullName: string;
   email: string;
   password: string;
 }
 
-export default function RegisterPage() {
+export default function LoginPage() {
   const {
     control,
     handleSubmit,
     formState: { errors },
   } = useForm<IFormData>({
     defaultValues: {
-      fullName: "",
       email: "",
       password: "",
     },
@@ -30,26 +28,17 @@ export default function RegisterPage() {
   return (
     <div>
       <div>
-        <h2 className="text-dark-100 text-xl font-medium">
-          Adventure starts here 🚀
+        <h2 className="text-xl font-medium text-dark-100">
+          Welcome to WeConnect! 👋
         </h2>
-        <p className="text-dark-100 mt-1 text-sm">
-          Make your app management easy and fun!
+        <p className="mt-1 text-sm text-dark-100">
+          Please sign in to your account and start the adventure
         </p>
       </div>
       <form
         className="mt-6 flex flex-col gap-4"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <FormField
-          name="fullName"
-          label="Full Name"
-          placeholder="john.doe"
-          control={control}
-          Component={TextInput}
-          error={errors["fullName"]}
-        />
-
         <FormField
           name="email"
           label="Email"
@@ -73,13 +62,13 @@ export default function RegisterPage() {
           type="submit"
           sx={{ textTransform: "none" }}
         >
-          Sign up
+          Sign in
         </Button>
 
         <p className="text-center text-sm">
-          Already have an account?{" "}
-          <Link className="text-main" to="/login">
-            Sign in instead
+          New on our platform{" "}
+          <Link className="text-main" to="/register">
+            Create an account
           </Link>
         </p>
       </form>
