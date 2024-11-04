@@ -9,7 +9,7 @@ import {
 import { ChangeEvent } from "react";
 
 interface ComponentProps<T extends FieldValues> {
-  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  onChange: (event: ChangeEvent<HTMLInputElement> | string) => void;
   value: string;
   name: Path<T>;
   type?: string;

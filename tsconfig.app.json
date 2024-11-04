@@ -30,6 +30,7 @@
       "@hooks/*": ["./src/hooks/*"],
       "@context/*": ["./src/context/*"],
       "@types/*": ["./src/types/*"],
+      "@redux/*": ["./src/redux/*"],
     }
   },
   "include": ["src"]

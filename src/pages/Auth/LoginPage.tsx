@@ -1,7 +1,10 @@
 import FormField from "@/components/FormField";
 import TextInput from "@/components/FormInputs/TextInput";
+import { login } from "@/redux/slices/authSlice";
 import { Button } from "@mui/material";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
 interface IFormData {
@@ -25,11 +28,20 @@ export default function LoginPage() {
     console.log(formData);
   };
 
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(
+      login({ accessToken: "accessToken", refreshToken: "refreshToken" }),
+    );
+  }, [dispatch]);
+
   return (
     <div>
       <div>
         <h2 className="text-xl font-medium text-dark-100">
-          Welcome to WeConnect! 👋
+          Welcome!👋
+          {/* Welcome <span>to WeConnect</span>! 👋 */}
         </h2>
         <p className="mt-1 text-sm text-dark-100">
           Please sign in to your account and start the adventure

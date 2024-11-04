@@ -1,15 +1,15 @@
-import { MuiOtpInput } from "mui-one-time-password-input";
+import { MuiOtpInput } from 'mui-one-time-password-input'
 
 interface TextInputProps {
-  onChange: (value: string) => void;
+  onChange: (event: string) => void;
   value: string;
-  name: string;
-  type?: string;
-  placeholder?: string;
-  error?: string;
 }
 
-const OTPInput = ({ value, onChange }: TextInputProps) => {
-  return <MuiOtpInput length={6} value={value} onChange={onChange} />;
-};
-export default OTPInput;
+
+const OTPInput = ({ value, onChange } : TextInputProps) => {
+  return (
+    <MuiOtpInput sx={{gap: '12px'}} length={6} value={value} onChange={onChange} />
+  )
+}
+
+export default OTPInput

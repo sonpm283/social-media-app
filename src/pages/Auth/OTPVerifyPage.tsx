@@ -12,7 +12,7 @@ export default function OTPVerifyPage() {
   const {
     control,
     handleSubmit,
-    formState: { errors },
+    // formState: { errors },
   } = useForm<IFormData>({
     defaultValues: {
       otp: "",
@@ -32,7 +32,7 @@ export default function OTPVerifyPage() {
         <p className="mt-1 text-sm text-dark-100">
           We sent a verification code to your mobile. Enter the code from the
           mobile in the field below. <br />
-          ******9763
+          <strong>******9763</strong>
         </p>
       </div>
       <form
@@ -51,13 +51,13 @@ export default function OTPVerifyPage() {
           type="submit"
           sx={{ textTransform: "none" }}
         >
-          Sign in
+          Verify my account
         </Button>
 
         <p className="text-center text-sm">
-          New on our platform{" "}
+          Didn't get the code?{" "}
           <Link className="text-main" to="/register">
-            Create an account
+            Resend
           </Link>
         </p>
       </form>

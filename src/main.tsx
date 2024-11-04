@@ -2,7 +2,7 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ModalProvider from "@context/ModalProvider";
 import RootLayout from "@pages/RootLayout";
-import React, { lazy } from "react";
+import { lazy } from "react";
 const HomePage = lazy(() => import("@pages/HomePage"));
 import "./index.css";
 import { ThemeProvider } from "@emotion/react";
@@ -12,6 +12,8 @@ import RegisterPage from "./pages/auth/RegisterPage";
 import AuthLayout from "./pages/auth/AuthLayout";
 import LoginPage from "./pages/auth/LoginPage";
 import OTPVerifyPage from "./pages/auth/OTPVerifyPage";
+import { store } from "@redux/store";
+import { Provider } from "react-redux";
 
 const router = createBrowserRouter([
   {
@@ -44,11 +46,11 @@ const router = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
+  <Provider store={store}>
     <ThemeProvider theme={theme}>
       <ModalProvider>
         <RouterProvider router={router} />
       </ModalProvider>
     </ThemeProvider>
-  </React.StrictMode>,
+  </Provider>,
 );
