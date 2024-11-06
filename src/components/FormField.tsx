@@ -9,7 +9,7 @@ import {
 import { ChangeEvent } from "react";
 
 interface ComponentProps<T extends FieldValues> {
-  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  onChange: (event: ChangeEvent<HTMLInputElement> | string) => void;
   value: string;
   name: Path<T>;
   type?: string;
@@ -39,7 +39,7 @@ export default function FormField<T extends FieldValues>({
 }: FormFieldProps<T>) {
   return (
     <div>
-      <p className="text-textColor mb-1 text-sm">{label}</p>
+      <p className="text-dark-100 mb-1 text-sm">{label}</p>
       <Controller
         name={name}
         control={control}
